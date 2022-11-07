@@ -40,10 +40,11 @@ class todoservice{
     }
 
     update_todo(id, todo){
-        for(let i of this.todo_data["data"]){
-            if(i["id"]==id){
-                i["title"]=todo["title"]
-                i["completed"]=todo["completed"]
+        let c=-1;
+        for(let i of this.todo_data["todo"]){
+            c=c+1;
+            if(i["ID"]==id){
+                this.todo_data['todo'][c]=todo;
             }
         }
     }
