@@ -18,7 +18,7 @@ describe('todo test suite', () => {
     test("get_todos", () => {
         expect(todo_service.get_todos().todo.length).toEqual(3);
     });
-    
+
     test("if new item is added", () => {
         let a = {
             "title": "T1",
@@ -27,5 +27,12 @@ describe('todo test suite', () => {
         }
         todo_service.add_todo(a);
         expect(todo_service.get_todos().todo.length).toEqual(4);
+    });
+    
+    test("if items to be deleted", () => {
+        let id = "cd"
+        todo_service.delete_todo(id);
+        expect(todo_service.get_todos().todo.length).toEqual(3);
+
     });
 });

@@ -1,14 +1,19 @@
 class todoservice{
     todo_data = {
         "todo":[{
+            "ID": "ab",
             "title": "T1",
             "description": "D1",
             "done": false
-        },{
+        },
+        {
+            "ID": "bc",
             "title": "T1",
             "description": "D1",
             "done": false
-        },{
+        },
+        {
+            "ID": "cd",
             "title": "T1",
             "description": "D1",
             "done": false
@@ -29,7 +34,7 @@ class todoservice{
 
     delete_todo(id){
         this.todo_data["todo"] = this.todo_data["todo"].filter(function(item) {
-            return item.id !==id
+            return item["ID"] !==id
         })
     
     }
