@@ -18,10 +18,14 @@ describe('todo test suite', () => {
     test("get_todos", () => {
         expect(todo_service.get_todos().todo.length).toEqual(3);
     });
-
     
-
-    // Write all your test cases here that corresponds to software requirements
-
-
+    test("if new item is added", () => {
+        let a = {
+            "title": "T1",
+            "description": "D1",
+            "done": false
+        }
+        todo_service.add_todo(a);
+        expect(todo_service.get_todos().todo.length).toEqual(4);
+    });
 });
