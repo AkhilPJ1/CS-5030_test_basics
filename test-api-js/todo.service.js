@@ -19,19 +19,28 @@ class todoservice{
     }
 
     get_todos(){
+        this.todo = this.todo_data;
         return this.todos;
     }
 
     add_todo(todo){
-        // Your code here
+        this.todo_data["todo"].push(todo)
     }
 
     delete_todo(id){
-        // Your code here
+        this.todo_data["todo"] = this.todo_data["todo"].filter(function(item) {
+            return item.id !==id
+        })
+    
     }
 
     update_todo(id, todo){
-        // Your code here
+        for(let i of this.todo_data["data"]){
+            if(i["id"]==id){
+                i["title"]=todo["title"]
+                i["completed"]=todo["completed"]
+            }
+        }
     }
 }
 
