@@ -28,7 +28,7 @@ jobs:
        - run:
            name: run tests
            command: cd test_javascript && npm run test
-    build-and-test-testapi-js:
+  build-and-test-testapi-js:
     
      docker:
        - image: cimg/node:14.20.0
