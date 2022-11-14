@@ -1,14 +1,19 @@
 class todoservice{
     todo_data = {
         "todo":[{
+            "ID": "ab",
             "title": "T1",
             "description": "D1",
             "done": false
-        },{
+        },
+        {
+            "ID": "bc",
             "title": "T1",
             "description": "D1",
             "done": false
-        },{
+        },
+        {
+            "ID": "cd",
             "title": "T1",
             "description": "D1",
             "done": false
@@ -29,16 +34,17 @@ class todoservice{
 
     delete_todo(id){
         this.todo_data["todo"] = this.todo_data["todo"].filter(function(item) {
-            return item.id !==id
+            return item["ID"] !==id
         })
     
     }
 
     update_todo(id, todo){
-        for(let i of this.todo_data["data"]){
-            if(i["id"]==id){
-                i["title"]=todo["title"]
-                i["completed"]=todo["completed"]
+        let c=-1;
+        for(let i of this.todo_data["todo"]){
+            c=c+1;
+            if(i["ID"]==id){
+                this.todo_data['todo'][c]=todo;
             }
         }
     }
